@@ -9,11 +9,14 @@ name: Java CI with Gradle
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
+  schedule:
+    - cron: '30 12 * * WED' # Wednesday at 12:30 PM UTC
+    - cron: '0 22 * * FRI' # Friday at 10:00 PM UTC
 
 jobs:
+
   build:
 
     runs-on: ubuntu-latest
